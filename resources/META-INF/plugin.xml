@@ -1,0 +1,37 @@
+<idea-plugin>
+  <id>org.bdshadow.json.serialization.generator</id>
+  <name>Dart Json Serialization Generator</name>
+  <version>1.0</version>
+  <vendor url="https://github.com/bdshadow/DartJsonSerializationGeneratorIdeaPlugin" email="bdshadow@gmail.com">Dmitrii Bocharov</vendor>
+
+  <description><![CDATA[
+      <p>
+      Generator plugin for JsonSerializable  Dart classes. Generates Dart fromJson and toJson methods based on fields of the class
+      </p>
+      <img src="https://raw.githubusercontent.com/bdshadow/DartJsonSerializationGeneratorIdeaPlugin/master/resources/description/demo.gif">
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <ul>
+        <li><strong>1.0</strong></li>
+          Generators for <i>.fromJson</i> factory and <i>toJson()</i> method
+      </ul>
+    ]]>
+  </change-notes>
+
+  <idea-version since-build="182.4505"/>
+
+  <depends>Dart</depends>
+  <depends>com.intellij.modules.xml</depends>
+  <actions>
+    <action id="Generate.FromJsonFactory.Dart" class="org.bdshadow.generation.GenerateDartFromJsonFactoryAction"
+            text="fromJson factory">
+      <add-to-group anchor="after" relative-to-action="Generate.EqualsAndHashcode.Dart" group-id="GenerateGroup"/>
+    </action>
+    <action id="Generate.toJson.Dart" class="org.bdshadow.generation.GenerateDartToJsonAction"
+            text="toJson()">
+      <add-to-group anchor="after" relative-to-action="Generate.FromJsonFactory.Dart" group-id="GenerateGroup"/>
+    </action>
+  </actions>
+
+</idea-plugin>
