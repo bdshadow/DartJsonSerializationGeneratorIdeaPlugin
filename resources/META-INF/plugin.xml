@@ -6,7 +6,7 @@
 
   <description><![CDATA[
       <p>
-      Generator plugin for JsonSerializable  Dart classes. Generates Dart fromJson and toJson methods based on fields of the class
+      Generator plugin for JsonSerializable  Dart classes. Generates Dart fromJson/fromMap and toJson/toMap methods based on fields of the class
       </p>
       <img src="https://raw.githubusercontent.com/bdshadow/DartJsonSerializationGeneratorIdeaPlugin/master/resources/description/demo.gif">
     ]]></description>
@@ -23,15 +23,17 @@
 
   <depends>Dart</depends>
   <depends>com.intellij.modules.xml</depends>
+
   <actions>
-    <action id="Generate.FromJsonFactory.Dart" class="org.bdshadow.generation.GenerateDartFromJsonFactoryAction"
-            text="fromJson factory">
-      <add-to-group anchor="after" relative-to-action="Generate.EqualsAndHashcode.Dart" group-id="GenerateGroup"/>
-    </action>
-    <action id="Generate.toJson.Dart" class="org.bdshadow.generation.GenerateDartToJsonAction"
-            text="toJson()">
-      <add-to-group anchor="after" relative-to-action="Generate.FromJsonFactory.Dart" group-id="GenerateGroup"/>
-    </action>
+    <group id="DartJsonMapGenerator">
+      <action id="Generate.FromJsonFactory.Dart" class="org.bdshadow.generation.GenerateDartFromJsonFactoryAction"
+              text="fromMap/fromJson factory">
+      </action>
+      <action id="Generate.toJson.Dart" class="org.bdshadow.generation.GenerateDartToJsonAction"
+              text="toMap()/toJson()">
+      </action>
+      <add-to-group group-id="GenerateGroup" anchor="last"/>
+    </group>
   </actions>
 
 </idea-plugin>

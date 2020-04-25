@@ -77,7 +77,7 @@ public class CreateToJsonFix extends BaseCreateMethodsFix<DartComponent> {
             }
             template.addTextSegment(",");
         }
-        template.addTextSegment("}");
+        template.addTextSegment("};");
         template.addTextSegment("}");
         template.addEndVariable();
         template.addTextSegment(" "); // trailing space is removed when auto-reformatting, but it helps to enter line break if needed
